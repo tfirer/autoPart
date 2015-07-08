@@ -1,0 +1,29 @@
+<mu-view title="快件详情">
+	<mu-nav-buttons side="left">
+		<mu-nav-back-button></mu-nav-back-button>
+    </mu-nav-buttons>
+
+    <mu-content>
+		<div class="card card-parcel">
+	  		<div class="item item-text-wrap">
+		  		{{parcel.item.seq}}
+	  		</div>
+	  		<div class="item item-text-wrap">
+		  		{{parcel.item.name}}
+	  		</div>
+	  		<div class="item item-text-wrap">
+		  		{{parcel.item.phone}}
+		  		<a ng-href="tel:{{parcel.item.phone}}">拨打</a>
+	  		</div>
+	  		<div class="item item-text-wrap">
+		  		{{parcel.item.phone}}
+		  		<a ng-href="sms:{{parcel.item.phone}}">发短信</a>
+	  		</div>
+	  		<div class="item item-text-wrap">
+		  		{{parcel.item.address}}
+	  		</div>
+		</div>
+		<mu-button class="button-full button-balanced" ng-show="parcel.item.status!=1100" ng-click="setReceived()">签收</mu-button>
+		<mu-button class="button-full button-assertive" ng-show="parcel.item.status==1000" ng-click="setProblem()">问题件</mu-button>
+	</mu-content>
+</mu-view>

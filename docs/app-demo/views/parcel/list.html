@@ -1,0 +1,36 @@
+<mu-view title="派单列表">
+    <mu-content>
+	  	<label class="item item-input">
+	    	<input type="text" placeholder="输入单号/收件人/地址查询" ng-model="parcel.search">
+	  		<mu-button class="button-stable button-list-query" ng-click="search()">查询</mu-button>
+	  	</label>
+		<div class="button-bar tab-button-bar">
+			<mu-button ng-class="{true: 'button-energized',false:'button-stable'}[parcel.status == 1000]" ng-click="setUnreceivedList()">未派单({{parcel.unreceived}})</mu-button>
+			<mu-button ng-class="{true: 'button-energized',false:'button-stable'}[parcel.status == 1100]" ng-click="setReceivedList()">已签收({{parcel.received}})</mu-button>
+			<mu-button ng-class="{true: 'button-energized',false:'button-stable'}[parcel.status == 2000]" ng-click="setProblemList()">问题件({{parcel.problem}})</mu-button>
+		</div>
+		<div class="card card-parcel">
+	  		<div class="item item-checkbox item-text-wrap" ng-repeat="item in parcel.items">
+		  		<label class="checkbox checkbox-stable">
+					<input type="checkbox" ng-model="item.checked">
+				</label>
+	    		<a href="#/parcel/detail/{{item.id}}">{{item.seq}} {{item.name}}<br/>{{item.address}}</a>
+	  		</div>
+		</div>
+
+		<!-- 未派单 -->
+		<div class="button-bar" ng-show="parcel.status == 1000">
+			<mu-button class="button-stable" ng-click="sendSms()">群发短信</mu-button>
+			<mu-button class="button-balanced" ng-click="setReceived()">签收</mu-button>
+			<mu-button class="button-assertive" ng-click="setProblem()">问题件</mu-button>
+		</div>
+		<!-- 问题件 -->
+		<div class="button-bar" ng-show="parcel.status == 2000">
+			<mu-button class="button-stable" ng-click="sendSms()">群发短信</mu-button>
+			<mu-button class="button-balanced" ng-click="setReceived()">签收</mu-button>
+		</div>
+		<!-- 已签收 -->
+		<mu-button class="button-stable button-full" ng-click="sendSms()" ng-show="parcel.status == 1100">群发短信</mu-button>
+		
+	</mu-content>
+</mu-view>

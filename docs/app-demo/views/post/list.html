@@ -1,0 +1,25 @@
+<mu-view title="圈子">
+  	<mu-nav-buttons side="right">
+  		<mu-button ng-click="goNewPost()">发帖</mu-button>
+    </mu-nav-buttons>
+
+    <mu-content>
+	  	<div class="card card-post">
+	  		<div class="item item-text-wrap" ng-repeat="item in items">
+	    		<div>
+	    			<span class="post-item-title">{{item.name}}</span>
+	    			<span class="post-item-time">{{item.time}}</span>
+	    		</div>
+	    		
+	    		<div class="post-item-content">
+	    			{{item.content}}
+	    		</div>
+	    		
+	    		<div class="post-item-like">
+	    			<a href="javascript:void(0);">评论[{{item.commentNum}}]</a>
+					<a href="javascript:void(0);">顶[{{item.likeNum}}]</a>
+	    		</div>
+	  		</div>
+		</div>
+	</mu-content>
+</mu-view>

@@ -1,0 +1,18 @@
+﻿<mu-view title="登录">
+  	<mu-nav-buttons side="right">
+  		<mu-button ng-click="goRegister()">注册</mu-button>
+    </mu-nav-buttons>
+    <mu-content>
+		<div class="logo"><h1>快递伴侣</h1></div>
+		<div class="list list-inset">
+		  	<label class="item item-input">
+		    	<input type="text" placeholder="手机号码" ng-model="user.username">
+		  	</label>
+		  	<label class="item item-input">
+		    	<input type="password" placeholder="密码" ng-model="user.password">
+		  	</label>
+		  	<mu-button class="button-full button-balanced" ng-click="login()">登录</mu-button>
+		</div>
+	</mu-content>
+</mu-view>
+
