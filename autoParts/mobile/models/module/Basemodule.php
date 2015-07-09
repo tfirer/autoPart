@@ -6,7 +6,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  * @version
  * @package
  */
-class Basemodule extends Basemodel {
+class BaseModule extends Basemodel {
     const TABLE_CUSTOMER     = 'customer';
     const TABLE_DISTRIBUTION = 'distribution';
     const TABLE_GARAGE_ORDER = 'garage_order';

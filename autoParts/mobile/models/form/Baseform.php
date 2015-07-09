@@ -6,7 +6,7 @@
  * @package application.core
 */
 
-class Baseform
+class BaseForm extends Basemodel
 {
 	public function __construct() {
 		$this->_CI =& get_instance();

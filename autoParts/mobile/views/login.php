@@ -20,15 +20,17 @@
                 <h1>配送商</h1>
             </div>
             <div class="list list-inset">
-                <label class="item item-input">
-                    <input type="text" placeholder="用户名">
-                </label>
-                <label class="item item-input">
-                    <input type="password" placeholder="密码">
-                </label>
-                <button class="button-full button-balanced button">
-                    <span>登录</span>
-                </button>
+                <form id="loginForm" method="post">
+                    <label class="item item-input">
+                        <input name="userName" value="<?php echo $form->userName?>" type="text" placeholder="用户名">
+                    </label>
+                    <label class="item item-input">
+                        <input name="userPassword" value="<?php echo $form->userPassword?>" type="password" placeholder="密码">
+                    </label>
+                    <button class="button-full button-balanced button">
+                        <input type="submit" value="登录" />
+                    </button>
+                </form>
             </div>
         </div>
     </body>
